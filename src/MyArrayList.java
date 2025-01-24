@@ -23,19 +23,20 @@ public class MyArrayList {
     }
 
     public void remove(int index) {
-        if (index < 0 || index > myArray.length) {
+        if (index < 0 || index >= myArray.length) {
             throw new IndexOutOfBoundsException("Index out of bounds: " + index);
         }
         int[] removedArray = new int[myArray.length - 1];
         for (int i = 0; i < myArray.length -1; i++) {
-            if (myArray[i] == index) {
-                removedArray[i] = myArray[i + 1];
-            } else {
+            if (i < index) {
                 removedArray[i] = myArray[i];
+            } else {
+                removedArray[i] = myArray[i + 1];
             }
         }
         this.myArray = removedArray;
     }
+
 
     public void clear(){
         this.myArray = new int[0];
