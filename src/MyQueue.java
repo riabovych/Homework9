@@ -34,6 +34,8 @@ public class MyQueue {
         queue.add(6);
         queue.printArray();
         queue.size();
+        queue.clear();
+        queue.size();
     }
 
     public Object peek() {
